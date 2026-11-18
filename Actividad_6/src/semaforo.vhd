@@ -128,7 +128,7 @@ begin
     -- Lógica de estado siguiente y salidas (Mealy)
     logica_mealy : process(estado_act, reset, s_ns, s_eo, e_ns, e_eo, z)
     begin
-        -- Valores por defecto especificados en el diagrama
+    -- Valores por defecto especificados en el diagrama
         estado_sig <= estado_act;
         c          <= '0';
         q          <= (others => '0');
@@ -172,7 +172,6 @@ begin
                         end if;
                     end if;
 
-                
                 -- Estado RVEXT: Extensión de Verde Este-Oeste por cruce peatonal
                 
                 when RVEXT =>
@@ -214,7 +213,6 @@ begin
                   
                     end if;
 
-                
                 -- Estado VR: Norte-Sur en Verde, Este-Oeste en Rojo (50 s)
                 
                 when VR =>
@@ -381,7 +379,6 @@ begin
             q   => q,
             z   => z
         );
-
     -- Compuerta OR del diagrama para recargar el Prescaler: Cp = C OR Zp
     cp <= c or zp;
 
@@ -400,5 +397,4 @@ begin
             q   => qp,
             z   => zp
         );
-
 end architecture estructural;
